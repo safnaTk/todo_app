@@ -81,10 +81,6 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
                     },
                     icon: Icon(Icons.delete, color: Colors.purple[300]),
                   ),
-                  IconButton(
-                    onPressed: () async {},
-                    icon: Icon(Icons.check_box, color: Colors.purple[300]),
-                  ),
                 ],
               ),
             ),

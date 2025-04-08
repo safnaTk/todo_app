@@ -13,7 +13,7 @@ class TodoScreenController {
     if (kIsWeb) {
       databaseFactory = databaseFactoryFfiWeb;
     }
-    // open the database
+    // initialize the database
 
     database = await openDatabase(
       "todo.db", // path-db name
@@ -28,7 +28,7 @@ class TodoScreenController {
     );
   }
 
-  // insert a task to db
+  // insert a data to db
   static Future<void> addTask({
     required String title,
     required String des,
@@ -60,14 +60,6 @@ class TodoScreenController {
       'UPDATE Todo SET title = ?, des = ? WHERE id = ?',
       [title, des, taskId],
     );
-    await getAllTasks();
-  }
-
-  static Future<void> updateTaskStatus(int id, String status) async {
-    await database.rawUpdate('UPDATE Todo SET status = ? WHERE id = ?', [
-      status,
-      id,
-    ]);
     await getAllTasks();
   }
 }

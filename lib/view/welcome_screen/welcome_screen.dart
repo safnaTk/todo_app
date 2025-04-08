@@ -14,9 +14,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      
       await TodoScreenController.getAllTasks();
       setState(() {});
-    });
+    }
+    );
 
     super.initState();
   }

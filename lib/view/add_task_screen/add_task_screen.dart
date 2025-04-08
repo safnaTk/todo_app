@@ -64,7 +64,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 hintStyle: TextStyle(color: Colors.black54),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -89,7 +89,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 hintStyle: TextStyle(color: Colors.black54),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
