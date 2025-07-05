@@ -1,11 +1,11 @@
+import 'package:asset_manager/controller/asesetsscreen_controller.dart';
+import 'package:asset_manager/view/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_app/controller/todo_screen_controller.dart';
 
-import 'package:todo_app/view/welcome_screen/welcome_screen.dart';
 
 Future<void> main() async {
-WidgetsFlutterBinding.ensureInitialized();// binding class connect flutter frimework to the underlined plateform
- await TodoScreenController.openDb();
+WidgetsFlutterBinding.ensureInitialized();
+ await AssetController.openDb();
   runApp(MyApp());
 }
 

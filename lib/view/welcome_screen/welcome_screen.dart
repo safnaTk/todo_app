@@ -1,7 +1,7 @@
+import 'package:asset_manager/controller/asesetsscreen_controller.dart';
+import 'package:asset_manager/view/assets_list_screen.dart/assets_list_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_app/controller/todo_screen_controller.dart';
 
-import 'package:todo_app/view/todo_list_screen/todo-list-screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -13,13 +13,10 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      
-      await TodoScreenController.getAllTasks();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await AssetController.getAllAssets();
       setState(() {});
-    }
-    );
-
+    });
     super.initState();
   }
 
@@ -31,31 +28,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Welcome to TODO App",
+            const Text(
+              "Welcome to Asset Manager",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ToDoListScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const AssetListScreen(),
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.purple[300],
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 12,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text("Get Started", style: TextStyle(fontSize: 18)),
+              child: const Text("Get Started", style: TextStyle(fontSize: 18)),
             ),
           ],
         ),
